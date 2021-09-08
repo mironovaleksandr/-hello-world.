@@ -1,0 +1,95 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsolePad
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+           
+            
+            Console.WriteLine("Игра \"Угадайка\" от 1 до 100");
+            Random rand = new Random();//переменная randomaize  для получения псевдослучайных чисел
+
+            int iiNumber = rand.Next(1, 101);
+            int count = 0;
+           
+            string name1;
+            string name2;
+
+            Console.WriteLine("\n Вводит ник первый игрок");
+            name1 = Convert.ToString(Console.ReadLine());
+            Console.WriteLine("\n Вводит ник второй игрок");
+            name2 = Convert.ToString(Console.ReadLine());
+
+
+            for (; ; )
+            {
+                Console.WriteLine("\n Введите число");
+                Console.WriteLine(name1);
+                count++;
+
+
+                int uzerNumber = Convert.ToInt32(Console.ReadLine());
+               
+                if (uzerNumber > iiNumber)
+                {
+                    Console.WriteLine("Число больше загаданного компьютером");
+                    Console.WriteLine("ход второго игрока");
+
+                }
+                else if (uzerNumber < iiNumber)
+                {
+                    Console.WriteLine("Число меньше загаданного компьютером");
+                    Console.WriteLine("ход второго игрока");
+                }
+                else
+                {
+                    Console.WriteLine($"Поздравляю число угаданно! число попыток {count}");
+                }
+            
+
+                    Console.WriteLine("\n Введите число");
+                    Console.WriteLine(name2);
+                    count++;
+                    int uzerNumber1 = Convert.ToInt32(Console.ReadLine());
+                    if (uzerNumber1 > iiNumber)
+                    {
+                        Console.WriteLine("Число больше загаданного компьютером");
+                        Console.WriteLine("ход первого игрока");
+                    }
+                    else if (uzerNumber1 < iiNumber)
+                    {
+                        Console.WriteLine("Число меньше загаданного компьютером");
+                        Console.WriteLine("ход первого игрока");
+                    }
+                          else 
+                    {
+                        Console.WriteLine($"Поздравляю число угаданно! число попыток {count}");
+                        Console.ReadKey();
+                   
+                    break;// прерывания цикла
+
+                    }
+
+
+
+                }
+
+
+
+
+
+
+
+
+
+
+            }
+        }
+    }
